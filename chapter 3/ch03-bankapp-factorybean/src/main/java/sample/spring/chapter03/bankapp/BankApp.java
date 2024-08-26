@@ -6,12 +6,13 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import sample.spring.chapter03.bankapp.domain.FixedDepositDetails;
+import sample.spring.chapter03.bankapp.event.EventSenderFactoryBean;
 import sample.spring.chapter03.bankapp.service.FixedDepositService;
 
 public class BankApp {
 	private static Logger logger = LogManager.getLogger(BankApp.class);
 
-	public static void main(String args[]) {
+	public static void main(String args[]) throws Exception {
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"classpath:META-INF/spring/applicationContext.xml");
 

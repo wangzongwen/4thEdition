@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 	
-	<bean id="bankDetails" class="sample.spring.chapter03.beans.BankDetails">
+	<bean id="bankDetails" class="sample.spring.chapter03.beans.BankDetails" scope = "prototype">
 		<property name="bankName" value="My Personal Bank" />
 		<property name="bankPrimaryBusiness" value="Retail banking" />
 		<property name="headOfficeAddress" value="Address of head office" />
@@ -13,6 +13,7 @@
 		<property name="branchAddresses" ref="branchAddresses" />
 	</bean>
 	
+	<!-- 在bean创建时拿当前的属性值赋值，后续dataTypes.dateType值改变也不影响已经创建的bean -->
 	<util:property-path id="dateType" path="dataTypes.dateType" />
  
 	<util:properties id="branchAddresses"
