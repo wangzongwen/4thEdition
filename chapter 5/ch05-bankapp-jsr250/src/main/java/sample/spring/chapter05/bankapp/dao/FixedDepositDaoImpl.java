@@ -29,7 +29,7 @@ public class FixedDepositDaoImpl implements FixedDepositDao {
 
 	@PreDestroy
 	public void releaseDbConnection() {
-		logger.info("FixedDepositDaoImpl's releaseDbConnection method invoked");
+		System.out.println("FixedDepositDaoImpl's releaseDbConnection method invoked");
 		connection.releaseConnection();
 	}
 }

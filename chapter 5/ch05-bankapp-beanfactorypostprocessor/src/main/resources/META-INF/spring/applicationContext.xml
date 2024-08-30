@@ -10,8 +10,10 @@
 
 	<bean id="fixedDepositDao"
 		class="sample.spring.chapter05.bankapp.dao.FixedDepositDaoImpl"
-		init-method="initializeDbConnection" destroy-method="releaseDbConnection">
-		<property name="fixedDepositDetails" ref="fixedDepositDetails" />
+		init-method="initializeDbConnection"
+		destroy-method="releaseDbConnection">
+		<property name="fixedDepositDetails"
+			ref="fixedDepositDetails" />
 	</bean>
 
 	<bean id="fixedDepositDetails"
@@ -24,5 +26,7 @@
 	</bean>
 
 	<bean
-		class="sample.spring.chapter05.bankapp.postprocessor.ApplicationConfigurer" />
+		class="sample.spring.chapter05.bankapp.postprocessor.ApplicationConfigurer">
+		<property name="fixedDepositDetails" ref="fixedDepositDetails" />
+	</bean>
 </beans>

@@ -10,9 +10,13 @@ import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.config.RuntimeBeanReference;
 
+import sample.spring.chapter05.bankapp.domain.FixedDepositDetails;
+
 public class ApplicationConfigurer implements BeanFactoryPostProcessor {
 	private static Logger logger = LogManager
 			.getLogger(ApplicationConfigurer.class);
+	
+	private FixedDepositDetails fixedDepositDetails;
 	
 	public ApplicationConfigurer() {
 		logger.info("Created ApplicationConfigurer instance");
@@ -61,4 +65,15 @@ public class ApplicationConfigurer implements BeanFactoryPostProcessor {
 		}
 		return isPrototype;
 	}
+
+	public FixedDepositDetails getFixedDepositDetails() {
+		return fixedDepositDetails;
+	}
+
+	public void setFixedDepositDetails(FixedDepositDetails fixedDepositDetails) {
+		logger.info("setFixedDepositDetails : {}",  fixedDepositDetails);
+		this.fixedDepositDetails = fixedDepositDetails;
+	}
+	
+	
 }
