@@ -64,6 +64,9 @@ public class BankApp {
 		_fdd.setTenure(6);
 		fixedDepositService.createFixedDeposit(_fdd);
 
+		BankAccountDetails bankAccountDetailsById = bankAccountService.getById(bankAccountId);
+		logger.info("BankAccountDetails By Id : " + bankAccountDetailsById);
+		
 		logger.info("Total number of fixed deposits : " + fixedDepositService.count());
 		logger.info("Number of fixed deposits with 12 months tenure " + fixedDepositService.countByTenure(12));
 

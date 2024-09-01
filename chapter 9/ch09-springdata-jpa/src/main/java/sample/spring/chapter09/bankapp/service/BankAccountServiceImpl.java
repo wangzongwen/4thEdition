@@ -18,4 +18,12 @@ public class BankAccountServiceImpl implements BankAccountService {
 	public int createBankAccount(BankAccountDetails bankAccountDetails) {
 		return bankAccountRepository.save(bankAccountDetails).getAccountId();
 	}
+
+	@Override
+	public BankAccountDetails getById(int accountId) {
+		return bankAccountRepository.findById(accountId).get();
+	}
+	
+	
+	
 }

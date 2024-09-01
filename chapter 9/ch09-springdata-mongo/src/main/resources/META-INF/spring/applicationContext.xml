@@ -7,7 +7,7 @@
         http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo.xsd">
 
 	<mongo:repositories base-package="sample.spring" />
-	<mongo:mongo-client host="localhost" port="27017" />
+	<mongo:mongo-client host="192.168.130.129" port="27017" credentials="admin:secret@admin" />
 	<mongo:db-factory dbname="test" mongo-ref="mongoClient" />
 	<mongo:template db-factory-ref="mongoDbFactory"/>
 

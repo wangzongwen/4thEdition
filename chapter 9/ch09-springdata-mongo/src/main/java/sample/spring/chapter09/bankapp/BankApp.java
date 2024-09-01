@@ -8,6 +8,8 @@ import java.util.concurrent.CompletableFuture;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 
 import sample.spring.chapter09.bankapp.domain.BankAccountDetails;
 import sample.spring.chapter09.bankapp.domain.FixedDepositDetails;
@@ -27,6 +29,7 @@ public class BankApp {
 		ConfigurableApplicationContext context = new ClassPathXmlApplicationContext(
 				"classpath:META-INF/spring/applicationContext.xml");
 		*/
+		
 		BankAccountService bankAccountService = context.getBean(BankAccountService.class);
 		BankAccountDetails bankAccountDetails = new BankAccountDetails();
 		bankAccountDetails.setBalance(1000);
