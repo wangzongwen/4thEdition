@@ -122,11 +122,13 @@
 	<task:scheduler id="emailScheduler" pool-size="10" />
 
 	<bean class="org.springframework.mail.SimpleMailMessage" id="requestReceivedTemplate">
+	    <property name="from" value="${email.from.request.received}" />
 		<property name="subject" value="${email.subject.request.received}" />
 		<property name="text" value="${email.text.request.received}" />
 	</bean>
 
 	<bean class="org.springframework.mail.SimpleMailMessage" id="requestProcessedTemplate">
+	    <property name="from" value="${email.from.request.processed}" />
 		<property name="subject" value="${email.subject.request.processed}" />
 		<property name="text" value="${email.text.request.processed}" />
 	</bean>

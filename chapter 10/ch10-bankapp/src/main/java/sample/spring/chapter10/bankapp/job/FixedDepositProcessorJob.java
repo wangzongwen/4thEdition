@@ -37,6 +37,7 @@ public class FixedDepositProcessorJob {
 			MimeMessage mimeMessage = mailSender.createMimeMessage();
 			MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(
 					mimeMessage);
+			mimeMessageHelper.setFrom(simpleMailMessage.getFrom());
 			mimeMessageHelper.setTo(fd.getEmail());
 			mimeMessageHelper.setSubject(simpleMailMessage.getSubject());
 			mimeMessageHelper.setText(simpleMailMessage.getText());

@@ -37,7 +37,7 @@ public class BankApp {
 		fdd.setFdAmount(500);
 		fdd.setTenure(12);
 		// -- set the email id here
-		fdd.setEmail("sarin.java@gmail.com");
+		fdd.setEmail("xxxx@qq.com");
 		fixedDepositService.createFixedDeposit(fdd);
 		
 		Thread.sleep(5000);

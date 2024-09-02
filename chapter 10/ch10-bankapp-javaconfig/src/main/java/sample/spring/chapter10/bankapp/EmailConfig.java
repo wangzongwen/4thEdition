@@ -34,12 +34,18 @@ public class EmailConfig {
 
 	@Value("${email.subject.request.received}")
 	private String requestReceivedSubject;
+	
+	@Value("${email.from.request.received}")
+	private String requestReceivedFrom;
 
 	@Value("${email.text.request.processed}")
 	private String requestProcessedText;
 
 	@Value("${email.subject.request.processed}")
 	private String requestProcessedSubject;
+	
+	@Value("${email.from.request.processed}")
+	private String requestProcessedFrom;
 
 	@Bean(name = "mailSender")
 	public JavaMailSender javaMailSender() {
@@ -62,6 +68,7 @@ public class EmailConfig {
 		SimpleMailMessage message = new SimpleMailMessage();
 		message.setText(requestReceivedText);
 		message.setSubject(requestReceivedSubject);
+		message.setFrom(requestReceivedFrom);
 		return message;
 	}
 
@@ -70,6 +77,7 @@ public class EmailConfig {
 		SimpleMailMessage message = new SimpleMailMessage();
 		message.setText(requestProcessedText);
 		message.setSubject(requestProcessedSubject);
+		message.setFrom(requestProcessedFrom);
 		return message;
 	}
 }
