@@ -94,7 +94,7 @@ public class FixedDepositController {
 		String depositAmount = params.get("depositAmount").get(0);
 		String tenure = params.get("tenure").get(0);
 		String email = params.get("email").get(0);
-		String id = params.get("id").get(0);
+		String id = params.getFirst("id");
 
 		Map<String, Object> modelData = new HashMap<String, Object>();
 
