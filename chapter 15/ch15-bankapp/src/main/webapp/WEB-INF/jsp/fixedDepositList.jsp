@@ -96,6 +96,8 @@
 					href="${pageContext.request.contextPath}/fixedDeposit/list?lang=en_CA">English(Canada)</a>
 				<br> <b>Locale:</b>
 				<c:out value="${currentLocale}" />
+				<br>
+				<c:out value="${currentTimeZone}" />
 				</td>
 			</tr>
 		</table>

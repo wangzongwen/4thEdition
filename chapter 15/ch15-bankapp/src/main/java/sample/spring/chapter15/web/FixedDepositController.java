@@ -32,6 +32,7 @@ public class FixedDepositController {
 		ModelMap modelData = new ModelMap();
 		modelData.put("fdList", fixedDepositService.getFixedDeposits());
 		modelData.put("currentLocale", LocaleContextHolder.getLocale());
+		modelData.put("currentTimeZone", LocaleContextHolder.getTimeZone());
 		return new ModelAndView("fixedDepositList", modelData);
 	}
 
