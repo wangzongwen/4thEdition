@@ -23,8 +23,8 @@ public class WebRequestSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(AuthenticationManagerBuilder auth)
 			throws Exception {
 		auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder()).withUser("admin").password("$2a$10$GL3WYjTbs5zlsAQrZU8BlOiKfOXaUulHA.G9.lk5/OA6EHuYQuvty")
-				.authorities("ROLE_ADMIN").and().withUser("$2a$10$xlmAHNLJXuZ1cdDloeqXCubD2Nsnw0k206hqccZ1gh1.VTCD2Scw2")
-				.password("cust1").authorities("ROLE_CUSTOMER").and()
+				.authorities("ROLE_ADMIN").and().withUser("cust1")
+				.password("$2a$10$xlmAHNLJXuZ1cdDloeqXCubD2Nsnw0k206hqccZ1gh1.VTCD2Scw2").authorities("ROLE_CUSTOMER").and()
 				.withUser("cust2").password("$2a$10$dcsvRkVmeQXig1UBiXdpS.X5N5osA/XPyflAatK5Oac2dfPrTTDOW")
 				.authorities("ROLE_CUSTOMER");
 	}
